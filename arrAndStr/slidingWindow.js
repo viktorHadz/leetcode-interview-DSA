@@ -26,3 +26,29 @@
 //         answer = max(answer, right - left + 1)
 
 //     return answer
+
+// ---------------------------------------------------------------------------------------
+// Given an integer array nums and an integer k,
+// find the sum of the subarray with the largest sum whose length is k.
+let arr = [3, -1, 4, 12, -8, 5, 6];
+
+function lgSum(nums, k) {
+  let curr = 0;
+  for (let i = 0; i < k; i++) {
+    curr += nums[i];
+  }
+  console.log("Current: ", curr);
+
+  let ans = curr;
+
+  for (let i = k; i < nums.length; i++) {
+    curr += nums[i] - nums[i - k];
+    console.log("nums[i]=", nums[i], "nums[i-k]=", nums[i - k]);
+    console.log("nums[i] - nums[i-k]", nums[i] - [nums[i - k]]);
+    ans = Math.max(ans, curr);
+  }
+
+  return ans;
+}
+
+console.log(lgSum(arr, 4));
