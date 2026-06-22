@@ -9,14 +9,18 @@ const graph = {
 // Exercise 1 — Print DFS
 function dfs(graph, node, visited = new Set()) {
     if (visited.has(node)) {
-        console.log("visited.has(node) condition met: ", visited);
-        return;
+        return visited;
     }
 
     visited.add(node);
-    console.log("node: ", node);
+    console.log("node:", node);
 
     for (const neighbor of graph[node]) {
-        dfs(graph, neighbor);
+        dfs(graph, neighbor, visited);
     }
+
+    return visited;
 }
+
+const dfsA = dfs(graph, "A");
+console.log("DFS: ", dfsA);
