@@ -118,3 +118,39 @@ function reverse(str, idx = str.length - 1, revStr = []) {
 }
 
 console.log("Reversed string: ", reverse("hello"));
+
+//[ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+//[ 0, 1, 2, 3, 4, 5, 6, 7,  8,  9]
+// Write a recursive function that returns fib at pos n
+function fib(n) {
+    if (n === 0) return 0;
+    if (n === 1) return 1;
+    return fib(n - 1) + fib(n - 2);
+}
+console.log("fibonacci", fib(3));
+
+// Write a that returns the number of distinct ways to reach the top
+// It takes n steps to reach the top
+// Each time you can either climb 1 or 2 steps
+// ex: 5 stairs to reach the top
+function climbStairs(n) {
+    if (n === 1) return 1;
+    if (n === 2) return 2;
+
+    return climbStairs(n - 1) + climbStairs(n - 2);
+}
+console.log(climbStairs(4));
+
+// 0,0,1,1,2,4,7,13,24,44,81
+function tribonacci(n) {
+    if (n === 0) return 0;
+    if (n === 1) return 0;
+    if (n === 2) return 1;
+
+    console.log("n-1", tribonacci(n - 1));
+    console.log("n-2", tribonacci(n - 2));
+    console.log("n-3", tribonacci(n - 3));
+    return tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);
+}
+
+console.log("Tribonacci", tribonacci(4));

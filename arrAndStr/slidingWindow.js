@@ -51,7 +51,7 @@ function lgSum(nums, k) {
   return ans;
 }
 
-console.log(lgSum(arr, 4));
+// console.log(lgSum(arr, 4));
 
 // ---------------------------------------------------------------------------------------
 // Given an integer array nums consisting of n elements and an integer k.
@@ -64,11 +64,25 @@ console.log(lgSum(arr, 4));
 // Output: 12.75000
 // Explanation: Maximum average is (12 - 5 - 6 + 50) / 4 = 51 / 4 = 12.75
 
+const nums = [1, 12, -5, -6, 50, 3],
+  k = 4;
+
 function maxAvgSubArr(nums, k) {
   let curr = 0;
-  // build initial window. Current should be 2
+  // build initial window.
   for (let i = 0; i < k; i++) {
     curr += nums[i];
   }
   console.log("Current: ", curr);
+  let ans = curr / k;
+  // now build the itteration logic
+  for (let i = k; i < nums.length; i++) {
+    curr += nums[i] - nums[i - k];
+    let temp = curr / k;
+
+    ans = Math.max(ans, temp);
+  }
+  return ans;
 }
+
+console.log("maxAvg: ", maxAvgSubArr(nums, k));
