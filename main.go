@@ -14,7 +14,14 @@ func main() {
 	// arrAndStr.ReverseStr(s)
 
 	// var s []int = []int{-4, -1, 0, 3, 10}
-	var s []int = []int{-7, -3, 2, 3, 11}
-	arrAndStr.SquareSort(s)
+	// var s []int = []int{-7, -3, 2, 3, 11}
+	// arrAndStr.SquareSort(s)
+
+	// Sliding Win - Static
+	// arrAndStr.MaxAvgSubArr([]int{1, 12, -5, -6, 50, 3}, 4)
+
+	// Sliding Win - Dynamic
+	arrAndStr.MaxOnes([]int{1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2)
+	// arrAndStr.MaxOnes([]int{0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1}, 3)
 
 }
