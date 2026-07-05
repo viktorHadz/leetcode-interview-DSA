@@ -77,32 +77,64 @@ func MaxOnes(nums []int, k int) int {
 
 func LongestWithSumLessThan(nums []int, k int) int {
 	start := 0
-	subLen := 0
-	longest := 0
 	sum := 0
+	maxLen := 0
+	curLen := 0
 
 	for end := 0; end < len(nums); end++ {
 		sum += nums[end]
-		subLen++
-		fmt.Println("++++++++++\n", "Subarray Length: ", subLen, "Longest: ", longest, "Sum: ", sum)
-		fmt.Println("Start: ", start, "End: ", end)
-		fmt.Println("++++++++++")
+		curLen++
 
-		if sum <= k && subLen > longest {
-			longest = subLen
-			fmt.Println("    Updating longest: ", longest)
+		fmt.Println("cLen", curLen)
+
+		for start < end && sum > k {
+			fmt.Println("nums[start]", nums[start], "sum", sum, "start", start, "cLen", curLen)
+			sum -= nums[start]
+			start++
 		}
 
-		for sum > k {
-			sum -= nums[start]
-			subLen--
-			start++
-			fmt.Println("-----------\n Sum > k: ", "Sum: ", sum, "Subarray Length: ", subLen, "Longest: ", longest)
-			fmt.Println("Start: ", start, "End: ", end)
-			fmt.Println("-----------")
+		if curLen > maxLen {
+			fmt.Println("sum: ", sum)
+			fmt.Println("updating curLen: ", curLen)
+			maxLen = curLen
 		}
 
 	}
-	fmt.Println("LONGEST TO RETURN: ", longest)
-	return longest
+
+	fmt.Println("maxLen: ", maxLen)
+	return maxLen
+}
+
+func MaxOnesIII(nums []int, k int) int {
+	start := 0
+	flipCount := 0
+	maxLen := 0
+
+	curLen := 0
+	for end := 0; end < len(nums); end++ {
+		if nums[end] == 0 {
+			flipCount++
+		}
+		curLen++
+
+		for flipCount > k && start <= end {
+
+			if nums[start] == 0 {
+				flipCount--
+			}
+
+			curLen--
+			start++
+
+			fmt.Println("-- Condition Violated -- ", "\n",
+				"start:", start, "end:", end, "\n",
+				"curLen:", curLen, "maxLen:", maxLen)
+		}
+
+		if curLen > maxLen {
+			maxLen = curLen
+		}
+	}
+	fmt.Println("Returning maxLen: ", maxLen)
+	return maxLen
 }
