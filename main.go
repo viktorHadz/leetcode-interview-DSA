@@ -21,11 +21,13 @@ func main() {
 	// arrAndStr.MaxAvgSubArr([]int{1, 12, -5, -6, 50, 3}, 4)
 	// arrAndStr.MaxAvg([]int{1, 12, -5, -6, 50, 3}, 4)
 	// arrAndStr.MinSubArrSum([]int{2, 3, 1, 2, 4, 3}, 7)
+
 	// Sliding Win - Dynamic
-	// arrAndStr.MaxOnes([]int{1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2)
-	// arrAndStr.MaxOnes([]int{0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1}, 3)
 	// arrAndStr.MaxOnesIII([]int{1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2)
-	arrAndStr.MaxOnesIII([]int{0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1}, 3)
-	// arrAndStr.LongestWithSumLessThan([]int{1, 2, 3, 4, 5}, 8)
+	// arrAndStr.MaxOnesIII([]int{0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1}, 3)
+
+	// Prefix Sum
+	arrAndStr.FindArrPrefix([]int{5, 2, 1, 6, 3, 8})
+	arrAndStr.AnswerQueries([]int{1, 6, 3, 2, 7, 2}, [][]int{{0, 3}, {2, 5}, {2, 4}}, 13)
 
 }
