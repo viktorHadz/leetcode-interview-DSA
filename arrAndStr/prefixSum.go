@@ -21,7 +21,7 @@ func FindArrPrefix(nums []int) []int {
 	for i := 1; i < len(nums); i++ {
 		prefix = append(prefix, nums[i]+prefix[len(prefix)-1])
 	}
-	fmt.Println("Prefix is: ", prefix)
+	fmt.Printf("==> Returning prefix for array: \n%v \n==> Prefix: \n %v\n", nums, prefix)
 	return prefix
 }
 
@@ -64,11 +64,35 @@ func AnswerQueries(nums []int, queries [][]int, limit int) []bool {
 		fmt.Println("query[0]:", query[0], "prefix[query[0]]", prefix[query[0]])
 		fmt.Println("query[1]:", query[1], "prefix[query[1]]", prefix[query[1]])
 		fmt.Println("nums[query[0]]", nums[query[0]])
-
+		// nums at query[0] => nums[]
 		curr := prefix[query[1]] - prefix[query[0]] + nums[query[0]]
 		fmt.Println("Sum: ", curr)
 		ans = append(ans, curr < limit)
 	}
 	fmt.Println("Ans: ", ans)
+	return ans
+}
+
+func WaysToSplitArray(nums []int) int {
+	// prefix first
+	prefix := []int{nums[0]}
+	for i := 1; i < len(nums); i++ {
+		prefix = append(prefix, nums[i]+prefix[i-1])
+	}
+	fmt.Println("prefix is: ", prefix) // correct prefix gj
+
+	// now i need to itterate over each prefix el and count the instances where
+	// prefix left is >= prefix right
+	ans := 0
+	for i := 0; i < len(prefix)-1; i++ {
+		left := prefix[i]
+		right := prefix[len(prefix)-1] - left
+
+		fmt.Printf("Eval left[ %v ] >= right [ %v ] => %v\n", left, right, left >= right)
+		if left >= right {
+			ans++
+		}
+	}
+	fmt.Println("Answer is: ", ans)
 	return ans
 }

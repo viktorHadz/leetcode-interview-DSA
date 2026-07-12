@@ -1,8 +1,6 @@
 package main
 
-import (
-	arrAndStr "github.com/viktorHadz/leetcode-interview-DSA/arrAndStr"
-)
+import arrandstr "github.com/viktorHadz/leetcode-interview-DSA/arrAndStr"
 
 func main() {
 	// CountToTen(0)
@@ -26,8 +24,22 @@ func main() {
 	// arrAndStr.MaxOnesIII([]int{1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2)
 	// arrAndStr.MaxOnesIII([]int{0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1}, 3)
 
+	// arrAndStr.MutateSlice()
+	//
 	// Prefix Sum
-	arrAndStr.FindArrPrefix([]int{5, 2, 1, 6, 3, 8})
-	arrAndStr.AnswerQueries([]int{1, 6, 3, 2, 7, 2}, [][]int{{0, 3}, {2, 5}, {2, 4}}, 13)
+	// arrAndStr.FindArrPrefix([]int{5, 2, 1, 6, 3, 8})
+	// arrAndStr.AnswerQueries([]int{1, 6, 3, 2, 7, 2}, [][]int{{0, 3}, {2, 5}, {2, 4}}, 13)
+	// arrandstr.WaysToSplitArray([]int{10, 4, -8, 7, 5})
 
+	//Exercise
+	// arrandstr.RunSum([]int{1, 2, 3, 4})
+	// arrandstr.RunSum([]int{1, 1, 1, 1, 1})
+	// arrandstr.RunSum([]int{3, 1, 2, 10, 1})
+	// arrandstr.RunSum([]int{7, 4, 3, 9, 1, 8, 5, 2, 6})
+
+	// arrandstr.MinValToGetPositiveSum([]int{-3, 2, -3, 4, 2})
+	// arrandstr.MinValToGetPositiveSum([]int{1, -2, -3})
+	// arrandstr.MinValToGetPositiveSum([]int{1, 2})
+
+	arrandstr.RadiusAvgs([]int{7, 4, 3, 9, 1, 8, 5, 2, 6}, 3)
 }
