@@ -1,7 +1,5 @@
 package checkexistence
 
-import "fmt"
-
 /*
 Given an integer array nums, find all the numbers x in nums that
 satisfy the following: x + 1 is not in nums, and x - 1 is not in nums.
@@ -14,17 +12,13 @@ func NumsThatSatisfy(nums []int) []int {
 	for _, v := range nums {
 		seen[v] = struct{}{}
 	}
-	fmt.Println(seen)
+
 	for key, _ := range seen {
 		_, hasPlus := seen[key+1]
 		_, hasMinus := seen[key-1]
-		fmt.Println("seen[key+1]: ", key+1, "seen[key-1]: ", key-1)
 		if !hasPlus && !hasMinus {
-			fmt.Printf("adding to answer: %v\n", key)
 			ans = append(ans, key)
 		}
 	}
-	fmt.Println(seen)
-	fmt.Println("Returning ans: ", ans)
 	return ans
 }

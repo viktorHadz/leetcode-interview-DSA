@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	checkexistence "github.com/viktorHadz/leetcode-interview-DSA/hashing/checkExistence"
+	"github.com/viktorHadz/leetcode-interview-DSA/hashing"
 )
 
 func main() {
@@ -89,6 +89,27 @@ func main() {
 	// char appears twice
 	// fmt.Println("Appears twice: ", checkexistence.FirstLetterToAppearTwice("abccbaacz"))
 
-	fmt.Println(checkexistence.NumsThatSatisfy([]int{1, 2, 4, 4, 7, 8, 10}))
+	// fmt.Println(checkexistence.NumsThatSatisfy([]int{1, 2, 4, 4, 7, 8, 10}))
 
+	// Check if sentence is pangram(contains all 26 English alphabet letters)
+	// fmt.Println(hashing.IsPangram("thequickbrownfoxjumpsoverthelazydog"))
+	// fmt.Println(hashing.IsPangram("leetcode"))
+
+	// missing number in range [0, len(nums)]
+	// fmt.Println(hashing.MissingNum([]int{3, 0, 1}))
+	// fmt.Println("-----")
+	// fmt.Println(hashing.MissingNum([]int{0, 1}))
+	// fmt.Println("-----")
+	// fmt.Println(hashing.MissingNum([]int{9, 6, 4, 2, 3, 5, 7, 0, 1}))
+	// fmt.Println("-----")
+	// fmt.Println(hashing.MissingNumGauss([]int{3, 0, 1}))
+	// fmt.Println("-----")
+	// fmt.Println(hashing.MissingNumGauss([]int{9, 6, 4, 2, 3, 5, 7, 0, 1}))
+
+	// countEls
+	fmt.Println(hashing.CountElements([]int{1, 2, 3}))
+	fmt.Println("-----")
+	fmt.Println(hashing.CountElements([]int{1, 1, 3, 3, 5, 5, 7, 7}))
+	fmt.Println("-----")
+	fmt.Println(hashing.CountElements([]int{1, 1, 2, 2}))
 }
