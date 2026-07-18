@@ -1,9 +1,15 @@
 package main
 
-import arrandstr "github.com/viktorHadz/leetcode-interview-DSA/arrAndStr"
+import (
+	"fmt"
+
+	checkexistence "github.com/viktorHadz/leetcode-interview-DSA/hashing/checkExistence"
+)
 
 func main() {
 	// CountToTen(0)
+
+	// ------ Arrays And Strings ------- //
 
 	// var arr = []int{1, 2, 3, 4}
 	// arrAndStr.TwoPointersMeetMid(arr)
@@ -41,5 +47,48 @@ func main() {
 	// arrandstr.MinValToGetPositiveSum([]int{1, -2, -3})
 	// arrandstr.MinValToGetPositiveSum([]int{1, 2})
 
-	arrandstr.RadiusAvgs([]int{7, 4, 3, 9, 1, 8, 5, 2, 6}, 3)
+	// Interesting problem I struggled with at the time but ended up solving
+	// arrandstr.RadiusAvgs([]int{7, 4, 3, 9, 1, 8, 5, 2, 6}, 3)
+
+	// ------ Set Implementation ------- //
+	// mySet := sets.NewSet[string]()
+	// mySet.Add("Earth")
+	// mySet.Add("Venus")
+	// mySet.Add("Mars")
+	// mySet.Add("Earth")
+	// mySet.Add("1")
+
+	// mySet.Delete("Venus")
+	// fmt.Println(mySet.List())
+	// fmt.Println(mySet.Len())
+	// fmt.Println(mySet.Contains("Earth"))
+
+	// numSet := sets.NewSet[int]()
+	// numSet.Add(1)
+	// numSet.Add(2)
+	// numSet.Add(3)
+	// numSet.Add(3)
+	// numSet.Add(3)
+	// fmt.Println(numSet.List())
+	// fmt.Println(numSet.Len())
+	// fmt.Println("--- printing via all method which returns an iterator")
+	// for val := range numSet.All() {
+	// 	fmt.Println(val)
+	// }
+
+	// ------ Strings ------- //
+	// fmt.Println(JoinString("Viktor"))
+	// StrUTH("Viktor")
+
+	// ------ Hashing ------- //
+
+	// fmt.Println("TwoSum: []int{5, 2, 7, 10, 3, 9}, 8}")
+	// fmt.Println("answer found by summing nums at idxs: ",
+	// 	hashing.TwoSum([]int{5, 2, 7, 10, 3, 9}, 8))
+
+	// char appears twice
+	// fmt.Println("Appears twice: ", checkexistence.FirstLetterToAppearTwice("abccbaacz"))
+
+	fmt.Println(checkexistence.NumsThatSatisfy([]int{1, 2, 4, 4, 7, 8, 10}))
+
 }
